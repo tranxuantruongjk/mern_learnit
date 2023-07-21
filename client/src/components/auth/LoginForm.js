@@ -11,7 +11,7 @@ const LoginForm = () => {
   const {loginUser} = useContext(AuthContext);
 
   // Router
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Local state
   const [loginForm, setLoginForm] = useState({
@@ -37,7 +37,7 @@ const LoginForm = () => {
       const loginData = await loginUser(loginForm);
       // console.log(loginData);
       if (loginData.success) {
-        // navigate('/dashboard');
+        navigate('/dashboard');
       } else {
         setAlert({type: 'danger', message: loginData.message});
         setTimeout(() => setAlert(null), 5000);

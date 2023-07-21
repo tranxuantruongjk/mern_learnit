@@ -57,7 +57,7 @@ router.post('/register', async (req, res) => {
         // Moi khi user can request thi user se dinh token vao header, 
         // server kiem tra
         // Return token
-        const accessToken = jwt.sign({userId: newUser._id}, process.env.ACCESS_TOKEN_SECRET);
+        const accessToken = jwt.sign({userId: newUser._id}, `${process.env.ACCESS_TOKEN_SECRET}`);
 
         res.status(200).json({success: true, message: 'User created successfully.', accessToken})
     } catch (error) {
@@ -90,7 +90,7 @@ router.post('/login', async (req, res) => {
         return res.status(400).json({success: false, message: 'Incorrect password'});
 
         // All good
-        const accessToken = jwt.sign({userId: user._id}, process.env.ACCESS_TOKEN_SECRET);
+        const accessToken = jwt.sign({userId: user._id}, `${process.env.ACCESS_TOKEN_SECRET}`);
 
         res.status(200).json({success: true, message: 'Logged in successfully.', accessToken})
     } catch (error) {
