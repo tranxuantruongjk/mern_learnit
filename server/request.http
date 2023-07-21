@@ -1,0 +1,53 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "truong",
+  "password": "truong"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "truong",
+  "password": "truong"
+}
+
+###
+
+POST http://localhost:5000/api/posts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzgwZmRiOGQzMjU3YTk3Y2ZiMGE5ODAiLCJpYXQiOjE2NjkzOTc5NDR9.Zz-WKVvWNPC4I9rytRxc_OPaDGAMiQMHjUJnMQnxU_Q
+
+{
+  "title": "Node",
+  "description": "Learn Node",
+  "url": "nodejs.org",
+  "status": "LEARNED"
+}
+
+###
+
+GET http://localhost:5000/api/posts/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzgwZmRiOGQzMjU3YTk3Y2ZiMGE5ODAiLCJpYXQiOjE2Njk0NDU2MTV9.nHGemsSr9rmOkLitPl8JCsScq83ttOICVzvgJoeC5-k
+
+###
+
+PUT http://localhost:5000/api/posts/6380fdf8d3257a97cfb0a982
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzgwZmRiOGQzMjU3YTk3Y2ZiMGE5ODAiLCJpYXQiOjE2Njk0NDU2MTV9.nHGemsSr9rmOkLitPl8JCsScq83ttOICVzvgJoeC5-k
+
+{
+  "title": "Vue",
+  "description": "Learn Vue",
+  "url": "https://vue.org",
+  "status": "LEARNING"
+}
+
+###
+
+DELETE http://localhost:5000/api/posts/6380fdf8d3257a97cfb0a982
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzgwZmRiOGQzMjU3YTk3Y2ZiMGE5ODAiLCJpYXQiOjE2Njk0NDU2MTV9.nHGemsSr9rmOkLitPl8JCsScq83ttOICVzvgJoeC5-k
